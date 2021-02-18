@@ -1,0 +1,108 @@
+.menu {
+    @media (max-width: $tablet-screen) {
+        display: grid;
+        &--opened {
+            width: 300px;
+            background-color: #fff;
+            box-shadow: 0 0 10px 1px #eee;
+        }
+    }
+
+    @media (min-width: $tablet-screen) {
+        display: grid;
+        grid-auto-flow: column;
+    }
+}
+
+.menu__button {
+    @media (max-width: $tablet-screen) {
+        display: block;
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        justify-self: end;
+        margin-top: 21px;
+        margin-right: 20px;
+    }
+
+    @media (min-width: $tablet-screen) {
+        display: none;
+    }
+}
+
+.menu__icon {
+    stroke: $text-black;
+}
+
+.menu__icon-menu,
+.menu__button--open .menu__icon-cross {
+    display: block;
+}
+
+.menu__icon-cross,
+.menu__button--open .menu__icon-menu {
+    display: none;
+}
+
+.menu__wrapper {
+    display: none;
+    
+    @media (max-width: $tablet-screen) {
+        &--opened {
+            display: block;
+        }
+    }
+
+    @media (min-width: $tablet-screen) {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+    }
+}
+
+.menu__list {
+    list-style: none;
+
+    @media (min-width: $tablet-screen) {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: center;
+    }
+}
+
+.menu__item {
+    @media (min-width: $tablet-screen) {
+        text-align: center;
+    }
+}
+
+.menu__link {
+    display: block;
+    text-decoration: none;
+    color: $text-white;
+    padding: 20px 0;
+    
+    @media (max-width: $tablet-screen) {
+        color: $text-black;
+        padding-left: 20px;
+    }
+
+    @media (min-width: $tablet-screen) {
+        padding: 20px;
+    }
+}
+
+.menu__tel {
+    display: block;
+    text-decoration: none;
+    color: $text-white;
+    padding: 20px 0;
+    font-weight: 600;
+    white-space: nowrap;
+
+    @media (max-width: $tablet-screen) {
+        text-align: center;
+        color: $text-black;
+        margin-top: 30px;
+    }
+}
