@@ -2,6 +2,7 @@
     position: fixed;
     width: 100%;
     backdrop-filter: blur(5px);
+    z-index: 1;
 }
 
 .header__wrapper {
@@ -23,15 +24,11 @@
     }
 }
 
-main {
-    background-image: url("../img/main.jpg");
-    background-position: center top;
-    height: 100vh;
-}
-
 .header__logo {
     display: block;
     width: 60px;
+    font-size: 0;
+    line-height: 0;
 }
 
 .header__menu {
