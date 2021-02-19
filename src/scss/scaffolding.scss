@@ -47,12 +47,12 @@ img {
     margin: 0 auto;
     max-width: 600px;
 
-    @media (min-width: $tablet-screen) {
+    @media (min-width: 768px) {
         max-width: none;
         width: 640px;
     }
 
-    @media (min-width: $desktop-screen) {
+    @media (min-width: 1200px) {
         width: 960px;
     }
 }

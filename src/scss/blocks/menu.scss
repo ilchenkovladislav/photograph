@@ -1,5 +1,5 @@
 .menu {
-    @media (max-width: $tablet-screen) {
+    @media (max-width: 899px) {
         display: grid;
         &--opened {
             width: 300px;
@@ -8,14 +8,14 @@
         }
     }
 
-    @media (min-width: $tablet-screen) {
+    @media (min-width: 900px) {
         display: grid;
         grid-auto-flow: column;
     }
 }
 
 .menu__button {
-    @media (max-width: $tablet-screen) {
+    @media (max-width: 899px) {
         display: block;
         margin: 0;
         padding: 0;
@@ -26,13 +26,17 @@
         margin-right: 20px;
     }
 
-    @media (min-width: $tablet-screen) {
+    @media (min-width: 900px) {
         display: none;
     }
 }
 
 .menu__icon {
     stroke: $text-black;
+
+    &-menu {
+        stroke: $text-white;
+    }
 }
 
 .menu__icon-menu,
@@ -48,13 +52,13 @@
 .menu__wrapper {
     display: none;
     
-    @media (max-width: $tablet-screen) {
+    @media (max-width: 899px) {
         &--opened {
             display: block;
         }
     }
 
-    @media (min-width: $tablet-screen) {
+    @media (min-width: 900px) {
         display: grid;
         grid-template-columns: 1fr min-content;
     }
@@ -63,7 +67,7 @@
 .menu__list {
     list-style: none;
 
-    @media (min-width: $tablet-screen) {
+    @media (min-width: 900px) {
         display: grid;
         grid-auto-flow: column;
         justify-content: center;
@@ -71,7 +75,7 @@
 }
 
 .menu__item {
-    @media (min-width: $tablet-screen) {
+    @media (min-width: 900px) {
         text-align: center;
     }
 }
@@ -82,12 +86,12 @@
     color: $text-white;
     padding: 20px 0;
     
-    @media (max-width: $tablet-screen) {
+    @media (max-width: 899px) {
         color: $text-black;
         padding-left: 20px;
     }
 
-    @media (min-width: $tablet-screen) {
+    @media (min-width: 900px) {
         padding: 20px;
     }
 }
@@ -100,7 +104,7 @@
     font-weight: 600;
     white-space: nowrap;
 
-    @media (max-width: $tablet-screen) {
+    @media (max-width: 899px) {
         text-align: center;
         color: $text-black;
         margin-top: 30px;
