@@ -1,14 +1,16 @@
 .main {
-    height: 100vh;
     position: relative;
 
     @media (max-width: 539px) {
         background-color: #fff;
+        padding-top: 20vh;
+        padding-bottom: 25vh;
     }
 
     @media (min-width: 540px) {
         background-image: url("../img/main-bg.jpg");
         background-size: cover;
+        height: 100vh;
     }
     
     @media (min-width: 540px) and (max-width: 1199px) {
@@ -47,7 +49,7 @@
     color: $text-black;
     
     @media (max-width: 539px) {
-        padding-top: 30vh;
+        // padding-top: 30vh;
     }
     
     @media (min-width: 1200px) {
