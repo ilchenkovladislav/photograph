@@ -1,0 +1,21 @@
+.portfolio__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 50vh);
+}
+
+.portfolio__grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio__item-1 { grid-area: 1 / 1 / 3 / 3; }
+.portfolio__item-2 { grid-area: 1 / 3 / 2 / 5; }
+.portfolio__item-3 { grid-area: 2 / 3 / 3 / 5; }
+.portfolio__item-4 { grid-area: 3 / 1 / 4 / 3; }
+.portfolio__item-5 { grid-area: 3 / 3 / 4 / 5; }
+.portfolio__item-6 { grid-area: 4 / 1 / 5 / 2; }
+.portfolio__item-7 { grid-area: 4 / 2 / 5 / 3; }
+.portfolio__item-8 { grid-area: 4 / 3 / 5 / 4; }
+.portfolio__item-9 { grid-area: 4 / 4 / 5 / 5; }
