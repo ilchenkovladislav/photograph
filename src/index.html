@@ -56,7 +56,7 @@
                 <p class="quote__text">Фотография - это в первую очередь вид искусства, который позволяет нам остаться в памяти людей, запечатлеть живописные места  и навсегда сохранить дорогие сердцу моменты нашей жизни</p>
             </div>
         </section>
-        <section class="portfolio">
+        <section id="portfolio" class="portfolio">
             <h2 class="visually-hidden">Мои работы</h2>
             <div class="portfolio__grid">
                 <img class="portfolio__item-1" src="img/portfolio1.jpg" alt="">
@@ -68,6 +68,58 @@
                 <img class="portfolio__item-7" src="img/portfolio7.jpg" alt="">
                 <img class="portfolio__item-8" src="img/portfolio8.jpg" alt="">
                 <img class="portfolio__item-9" src="img/portfolio9.jpg" alt="">
+            </div>
+        </section>
+        <section id="price" class="price">
+            <div class="container">
+                <h2 class="secondary-title">Сколько будет стоить?</h2>
+                <div class="price__wrapper">
+                    <div class="price__description">
+                        <div id="price__desc-processing" class="price__item price__item--active">
+                            <img class="price__img" src="img/portfolio6.jpg" alt="">
+                            <p class="price__text">Цена за съемку состоит из многих частей, вы можете сами выбрать самый подходящий для вас вариант. Чтобы узнать примерную стоимость, выберете необходимые опции. Узнать подробнее о каждой можно нажав на нее</p>
+                        </div>
+                        <div id="price__desc-retouch" class="price__item">
+                            <img class="price__img" src="img/portfolio2.jpg" alt="">
+                            <p class="price__text">Далеко-далеко за словесными горам сных, живут рыбные тексты. До это он там вершину от всех знаках рамматики!</p>
+                        </div>
+                        <div id="price__desc-location" class="price__item">
+                            <img class="price__img" src="img/portfolio4.jpg" alt="">
+                            <p class="price__text">Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. До это х знаках переписали коварный грамматики!</p>
+                        </div>
+                        <div id="price__desc-hours" class="price__item">
+                            <img class="price__img" src="img/portfolio4.jpg" alt="">
+                            <p class="price__text">Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. До это х знаках переписали коварный грамматики!</p>
+                        </div>
+                        <div id="price__desc-timing" class="price__item">
+                            <img class="price__img" src="img/portfolio4.jpg" alt="">
+                            <p class="price__text">Далеко-далеко за словесными горами в стране гласных и согласных, живут рыбные тексты. До это х знаках переписали коварный грамматики!</p>
+                        </div>
+                    </div>
+                    <form action="#" class="price__calc">
+                        <label class="price__label">
+                            Обработка фото
+                            <input class="price__input price__input--checkbox" type="checkbox" name="processing">
+                        </label>
+                        <label class="price__label">
+                            Детальная ретушь
+                            <input class="price__input price__input--checkbox" type="checkbox" name="retouch">
+                        </label>
+                        <label class="price__label">
+                            Выбор локаций для съемки
+                            <input class="price__input price__input--checkbox" type="checkbox" name="location">
+                        </label>
+                        <label class="price__label">
+                            Длительность съемки (часы)
+                            <input class="price__input price__input--number" type="number" name="hours" value="2" min="1" max="10">
+                        </label>
+                        <label class="price__label">
+                            Срок обработки (дней)
+                            <input class="price__input price__input--number" type="number" name="timing" value="30" min="5" max="30" disabled>
+                        </label>
+                        <div class="price__total">2000р</div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -82,6 +134,110 @@
             menuBtn.classList.toggle("menu__button--open");
             menuWrapper.classList.toggle("menu__wrapper--opened");
         });
+    </script>   
+
+    <script>
+        const labels = document.querySelectorAll(".price__label");
+        
+        let removeActive = () => {
+            const itemActive = document.querySelector(".price__item--active");
+            itemActive.classList.remove("price__item--active");
+        }
+
+        let addActive = (label) => {
+            let name = label.children[0].getAttribute("name");
+
+            let id = "#price__desc-" + name;
+            document.querySelector(id).classList.add("price__item--active");
+        }
+
+        labels.forEach((label) => {
+            label.addEventListener("click", () => {
+                removeActive();
+                addActive(label);
+            })
+        })
+
+
+        const inputHours = document.querySelector(".price__input--number[name=hours]");
+        const inputTime = document.querySelector(".price__input--number[name=timing]");
+
+        const checkProc = document.querySelector(".price__input--checkbox[name=processing]");
+        const checkRetouch = document.querySelector(".price__input--checkbox[name=retouch]");
+        const checkLocation = document.querySelector(".price__input--checkbox[name=location]");
+
+        const priceTotal = document.querySelector(".price__total");
+
+        let changeTotal = () => {
+            let total = 0;
+            if (inputTime.hasAttribute("disabled")) {
+                total = (500 * hours) + (retouch * hours) + loc;
+                console.log("disabled");
+            } else {
+                total = (500 * hours) + (processing * hours) + (retouch * hours) + Number((((2500*time) - 87500) / -25) * (hours / 2)) + loc;
+            }
+
+            priceTotal.textContent = `${total}р`;
+        }
+
+        let processing = 0;
+        let retouch = 0;
+        let loc = 0;
+        let hours = Number(inputHours.value);
+        let time = Number(inputTime.value);
+
+        changeTotal();
+
+
+        checkProc.addEventListener("click", (e) => {
+            if (e.target.checked) {
+                processing = 500;
+            } else {
+                processing = 0;
+            }
+
+            inputTime.toggleAttribute("disabled");
+            changeTotal();
+        });
+
+        checkRetouch.addEventListener("click", (e) => {
+            if (e.target.checked) {
+                retouch = 200;
+            } else {
+                retouch = 0;
+            }
+            changeTotal();
+        });
+
+        checkLocation.addEventListener("click", (e) => {
+            if (e.target.checked) {
+                loc = 1000;
+            } else {
+                loc = 0;
+            }
+            changeTotal();
+        });
+
+        inputHours.addEventListener("change", (e) => {
+            if (Number(e.target.value) > 10) {
+                e.target.value = 10;
+            } else if (Number(e.target.value) < 1) {
+                e.target.value = 1;
+            }
+            hours = Number(e.target.value);
+            changeTotal();
+        });
+
+        inputTime.addEventListener("change", (e) => {
+            if (Number(e.target.value) > 30) {
+                e.target.value = 30;
+            } else if (Number(e.target.value) < 5) {
+                e.target.value = 5;
+            }
+
+            time = Number(e.target.value);
+            changeTotal();
+        })
     </script>
 </body>
 </html>

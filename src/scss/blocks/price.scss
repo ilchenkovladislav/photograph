@@ -1,0 +1,81 @@
+.price {
+    padding: 50px 0;
+}
+
+.price__wrapper {
+    margin-top: 30px;
+    @media (min-width: 900px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        align-items: center;
+    }
+}
+
+.price__item {
+    display: none;
+
+    &--active {
+        display: block;
+    }
+}
+
+.price__img {
+    width: 100%;
+    object-fit: cover;
+
+    @media (max-width: 899px) {
+        height: 400px;
+    }
+
+    @media (min-width: 900px) {
+        height: 300px;
+    }
+}
+
+.price__calc {
+    @media (max-width: 899px) {
+        margin-top: 30px;
+    }
+
+    display: grid;
+    gap: 30px;
+}
+
+.price__label {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.price__input {
+    background-color: transparent;
+    border: 1px solid #8b8b8b;
+    border-radius: 5px;
+    display: grid;
+    order: -1;
+    
+    &--checkbox {
+        width: 30px;
+        height: 30px;
+    }
+    
+    &--number {
+        padding: 5px;
+    }
+
+    &:disabled {
+        background-color: #ddd;
+    }
+    
+}
+
+.price__total {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    justify-self: start;
+}
