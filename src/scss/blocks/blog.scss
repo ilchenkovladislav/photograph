@@ -1,0 +1,45 @@
+.blog {
+    padding: 30px 0;
+}
+
+.blog__list {
+    margin-top: 30px;
+    list-style: none;
+
+    display: grid;
+    row-gap: 50px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+}
+
+.blog__title {
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-decoration: none;
+    color: $text-black;
+
+    &:hover {
+        color: lighten($text-black, 30%);
+    }
+}
+
+.blog__description {
+    margin-top: 10px;
+}
+
+.blog__more {
+    display: block;
+    color: #3e6886;
+    text-align: center;
+    margin-top: 50px;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
