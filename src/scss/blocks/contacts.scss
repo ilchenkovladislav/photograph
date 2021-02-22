@@ -8,6 +8,8 @@
     
     @media (min-width: 540px) {
         background-image: url("../img/contacts-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 720px;
     }
 }
@@ -17,6 +19,7 @@
     display: grid;
     row-gap: 30px;
     background-color: #2d575d;
+    border-radius: 10px;
     
     @media (max-width: 539px) {
         padding: 20px;
@@ -33,7 +36,7 @@
     }
     
     @media (min-width: 1200px) {
-        right: 100px;
+        right: 10%;
     }
 }
 
