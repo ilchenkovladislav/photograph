@@ -1,0 +1,65 @@
+.contacts {
+    position: relative;
+    padding: 30px 0;
+    height: 583px;
+    
+    display: grid;
+    align-items: center;
+    
+    @media (min-width: 540px) {
+        background-image: url("../img/contacts-bg.jpg");
+        height: 720px;
+    }
+}
+
+.contacts__form {
+    position: absolute;
+    display: grid;
+    row-gap: 30px;
+    background-color: #2d575d;
+    
+    @media (max-width: 539px) {
+        padding: 20px;
+        width: 100%;
+    }
+    
+    @media (max-width: 1199px) {
+        justify-self: center;
+    }
+    
+    @media (min-width: 540px) {
+        width: 400px;
+        padding: 45px;
+    }
+    
+    @media (min-width: 1200px) {
+        right: 100px;
+    }
+}
+
+.contacts__label {
+    display: block;
+    color: $text-white;
+}
+
+.contacts__input {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(#fff, .3);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+
+    &::placeholder {
+        color: rgba(#fff, .7);
+    }
+}
+
+.contacts__submit {
+    display: block;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 1px solid rgba(#fff, .3);
+    color: $text-white;
+}
