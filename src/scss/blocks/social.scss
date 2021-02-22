@@ -1,0 +1,45 @@
+.social {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px;
+
+    @media (max-width: 899px) {
+        justify-content: center;
+    }
+
+    @media (min-width: 900px) {
+        justify-content: end;
+        align-items: start;
+    }
+}
+
+.social__item {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--vk {
+        background-image: url("../img/vk.svg");
+        width: 50px;
+    }
+
+    &--insta {
+        background-image: url("../img/instagram.svg");
+        background-size: 30px;
+        width: 30px;
+    }
+    
+    &--tg {
+        background-image: url("../img/telegram.svg");
+        background-size: 32px;
+        width: 32px;
+    }
+}
+
+.social__link {
+    display: block;
+    height: 50px;
+    font-size: 0;
+    line-height: 0;
+}

@@ -1,0 +1,38 @@
+.footer {
+    padding: 25px 0;
+}
+
+.footer__wrapper {
+    display: grid;
+    row-gap: 30px;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        align-items: start;
+    }
+}
+
+.footer__contacts {
+    display: grid;
+    row-gap: 10px;
+}
+
+.footer__email {
+    color: $text-black;
+    text-decoration: none;
+}
+
+.footer__tel {
+    color: $text-black;
+    text-decoration: none;
+}
+
+.footer__address {
+    white-space: nowrap;
+}
+
+.footer__copyright {
+    text-align: center;
+    margin-top: 20px;
+}
