@@ -262,12 +262,23 @@
         const menu = document.querySelector(".menu");
         const menuBtn = document.querySelector(".menu__button");
         const menuWrapper = document.querySelector(".menu__wrapper");
+        const menuLinks = document.querySelectorAll(".menu__link");
 
         menuBtn.addEventListener("click", () => {
             menu.classList.toggle("menu--opened")
             menuBtn.classList.toggle("menu__button--open");
             menuWrapper.classList.toggle("menu__wrapper--opened");
         });
+
+        menuLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                if (menu.classList.contains("menu--opened")) {
+                    menu.classList.remove("menu--opened")
+                    menuBtn.classList.remove("menu__button--open");
+                    menuWrapper.classList.remove("menu__wrapper--opened");
+                }
+            });
+        })
     </script>   
 
     <script>
@@ -306,7 +317,6 @@
             let total = 0;
             if (inputTime.hasAttribute("disabled")) {
                 total = (500 * hours) + (retouch * hours) + loc;
-                console.log("disabled");
             } else {
                 total = (500 * hours) + (processing * hours) + (retouch * hours) + Number((((2500*time) - 87500) / -25) * (hours / 2)) + loc;
             }

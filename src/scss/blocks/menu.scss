@@ -7,7 +7,7 @@
             width: 300px;
             height: 100vh;
             background-color: #fff;
-            box-shadow: 0 0 10px 1px rgba(#000, .5);
+            box-shadow: 0 0 10px 1px rgba(#000, .1);
         }
     }
 
@@ -25,7 +25,7 @@
         border: none;
         background-color: transparent;
         justify-self: end;
-        margin-top: 21px;
+        margin-top: 10px;
         margin-right: 20px;
         font-size: 0;
     }
@@ -91,7 +91,7 @@
     padding: 20px 0;
 
     &:hover {
-        color: darken($text-white, 10)
+        color: #777;
     }
     
     @media (max-width: 899px) {
@@ -113,7 +113,7 @@
     white-space: nowrap;
 
     &:hover {
-        color: darken($text-white, 10)
+        color: #777;
     }
 
     @media (max-width: 899px) {
