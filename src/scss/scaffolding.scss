@@ -45,6 +45,7 @@ img {
 }
 
 .container {
+    width: 100%;
     
     @media (max-width: 1319px) {
         padding: 0 20px;
@@ -70,4 +71,9 @@ img {
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+
+button, input, textarea, ::placeholder {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
 }

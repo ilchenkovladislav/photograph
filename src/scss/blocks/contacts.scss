@@ -1,7 +1,5 @@
 .contacts {
-    position: relative;
     padding: 30px 0;
-    height: 583px;
     
     display: grid;
     align-items: center;
@@ -10,7 +8,6 @@
         background-image: url("../img/contacts-bg.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        height: 720px;
 
         @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
             background-image: url("../img/contacts-bg@2x.jpg");
@@ -18,48 +15,72 @@
     }
 }
 
+.contacts__wrapper {
+    display: grid;
+
+    @media (min-width: 1200px) {
+        justify-content: end;
+    }
+
+    @media (min-width: 539px) and (max-width: 1199px) {
+        justify-content: center;
+    }
+}
+
 .contacts__form {
-    position: absolute;
     display: grid;
     row-gap: 30px;
-    background-color: #2d575d;
-    border-radius: 10px;
     
     @media (max-width: 539px) {
-        padding: 20px;
         width: 100%;
     }
     
-    @media (max-width: 1199px) {
-        justify-self: center;
-    }
-    
     @media (min-width: 540px) {
+        background-color: $form;
+        border-radius: 10px;
         width: 400px;
         padding: 45px;
-    }
-    
-    @media (min-width: 1200px) {
-        right: 10%;
     }
 }
 
 .contacts__label {
     display: block;
-    color: $text-white;
+
+    @media (max-width: 539px) {
+        color: $text-black;
+    }
+    
+    @media (min-width: 540px) {
+        color: $text-white;
+    }
+    
 }
 
 .contacts__input {
     display: block;
     width: 100%;
     background-color: transparent;
-    border: 1px solid rgba(#fff, .3);
     border-radius: 5px;
     padding: 10px;
+    font-size: 16px;
     margin-top: 10px;
-
+    
     &::placeholder {
         color: rgba(#fff, .7);
+    }
+    
+    @media (max-width: 539px) {
+        border: 1px solid rgba(#000, .3);
+        color: $text-black;
+        
+        &::placeholder {
+            color: rgba(#000, .7);
+        }
+    }
+
+    @media (min-width: 540px) {
+        color: $text-white;
+        border: 1px solid rgba(#fff, .3);
     }
 }
 
@@ -67,6 +88,14 @@
     display: block;
     padding: 10px 15px;
     background-color: transparent;
-    border: 1px solid rgba(#fff, .3);
-    color: $text-white;
+    
+    @media (max-width: 539px) {
+        border: 1px solid rgba(#000, .3);
+        color: $text-black;
+    }
+
+    @media (min-width: 540px) {
+        border: 1px solid rgba(#fff, .3);
+        color: $text-white;
+    }
 }
