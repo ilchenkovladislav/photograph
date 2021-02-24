@@ -1,5 +1,5 @@
 .page-blog {
-    padding: 50px 0;
+    padding: 20px 0;
 }
 
 .page-blog__container {
@@ -12,6 +12,18 @@
 
     @media (min-width: 1200px) {
         width: 960px;
+    }
+}
+
+.page-blog__return {
+    display: block;
+    text-decoration: none;
+    color: $text-black;
+    padding: 15px 0;
+
+    
+    &:hover {
+        color: lighten($text-black, 60%);
     }
 }
 
