@@ -48,6 +48,7 @@
     justify-content: start;
     align-items: center;
     column-gap: 20px;
+    cursor: pointer;
 }
 
 .price__input {
@@ -56,6 +57,7 @@
     border-radius: 5px;
     display: grid;
     order: -1;
+
     
     &--checkbox {
         width: 30px;
